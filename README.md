@@ -27,7 +27,7 @@ const SPUR = require("./Wrapper.js");
 SPUR.setModule(require("./spur.js"));
 SPUR.setWASM("./spur.wasm");
 
-SPUR.run("p cnf 5 3 [...]", ["-verb=2"]).then(result => {
+SPUR.run("p cnf 5 3 [...]", ["-count-only"]).then(result => {
 	console.log(result);
 }).catch(reason => {
 	console.error(reason);
