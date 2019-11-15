@@ -20,16 +20,12 @@
 #include "component_cache.h"
 #include "sampler_tools.h"
 
-#ifdef __linux__
+#if defined(__linux__) || defined(__EMSCRIPTEN__)
 
-  #include <sys/sysinfo.h>
   #include <cstdint>
 
   uint64_t freeram() {
-    struct sysinfo info;
-        sysinfo(&info);
-
-    return info.freeram *(uint64_t) info.mem_unit;
+     return (uint64_t) 128 * 1024 * 1024;
   }
 
 #elif __APPLE__ && __MACH__
