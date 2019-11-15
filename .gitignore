@@ -1,0 +1,6 @@
+# generated demo web app files
+demo/bundle.js
+demo/spur.wasm
+
+# release build
+release/*
