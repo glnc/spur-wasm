@@ -7,7 +7,7 @@ echo "### Cleaning..."
 rm ./demo/bundle.js
 rm ./demo/$PROGRAM.wasm
 
-# clean release folder
+# clean release build
 mkdir -p release
 rm ./release/Wrapper.js
 rm ./release/$PROGRAM.js
