@@ -38,8 +38,6 @@ SPUR.run("p cnf 5 3 [...]", ["-count-only"]).then(result => {
 ```
 
 ## Original License
-MIT License
-
 Copyright (c) 2018 Zayd Hammoudeh & Dimitris Achlioptas
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
