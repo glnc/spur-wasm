@@ -4,14 +4,26 @@ PROGRAM="spur"
 echo "### Cleaning..."
 
 # clean demo web app
-rm ./demo/bundle.js
-rm ./demo/$PROGRAM.wasm
+rm -f ./demo/bundle.js
+rm -f ./demo/$PROGRAM.wasm
 
-# clean release folder
+# clean release build
 mkdir -p release
-rm ./release/Wrapper.js
-rm ./release/$PROGRAM.js
-rm ./release/$PROGRAM.wasm
+rm -f ./release/Wrapper.js
+rm -f ./release/$PROGRAM.js
+rm -f ./release/$PROGRAM.wasm
+
+# build gmp if needed
+echo -n "\n### Checking for compiled gmp libraries..."
+if [ -f include/gmp.h ] && [ -f include/gmpxx.h ] && [ -f lib/libgmp.a ] && [ -f lib/libgmpxx.a ]
+then
+	echo " found"
+else
+	echo " not found"
+	./build_gmp.sh
+	echo "\n### Building gmp libraries finished."
+fi
+
 
 # build
 echo "\n### Building release build..."
