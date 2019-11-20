@@ -2,5 +2,13 @@
 demo/bundle.js
 demo/spur.wasm
 
+# temporary files for GMP build
+tmp/
+
+# GMP libraries
+include/
+lib/
+share/
+
 # release build
 release/*
