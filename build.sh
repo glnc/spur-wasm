@@ -13,17 +13,16 @@ rm -f ./release/Wrapper.js
 rm -f ./release/$PROGRAM.js
 rm -f ./release/$PROGRAM.wasm
 
-# build gmp if needed
-echo -n "\n### Checking for compiled gmp libraries..."
+# build GNU MP Bignum libraries if needed
+echo -n "\n### Checking for GNU MP Bignum libraries..."
 if [ -f include/gmp.h ] && [ -f include/gmpxx.h ] && [ -f lib/libgmp.a ] && [ -f lib/libgmpxx.a ]
 then
-	echo " found"
+	echo " found."
 else
-	echo " not found"
+	echo " not found."
+	echo "\n### Building GNU MP Bignum libraries..."
 	./build_gmp.sh
-	echo "\n### Building gmp libraries finished."
 fi
-
 
 # build
 echo "\n### Building release build..."
@@ -44,7 +43,7 @@ emcc -o release/$PROGRAM.js \
     -std=c++11 \
     -O3 \
     -s ALLOW_MEMORY_GROWTH=1 -s INVOKE_RUN=0 -s FORCE_FILESYSTEM=1 -s EXIT_RUNTIME=1 -s MODULARIZE=1 -s 'EXPORT_NAME="$PROGRAM"' \
-    --pre-js src_js/prerun.js 
+    --pre-js src_js/prerun.js
 
 cp ./src_js/Wrapper.js ./release/Wrapper.js
 

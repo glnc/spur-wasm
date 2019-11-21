@@ -2,7 +2,7 @@
 PROGRAM="gmp"
 VERSION="6.1.2"
 PROGRAM_VERSION="${PROGRAM}-${VERSION}"
-ARCHIVE="${PROGRAM_VERSION}.tar.xz"
+ARCHIVE="${PROGRAM_VERSION}.tar.bz2"
 TMP_FOLDER="tmp"
 ROOT_DIR=$PWD
 
@@ -24,15 +24,15 @@ wget https://gmplib.org/download/gmp/${ARCHIVE}
 
 # unpack
 echo "\n### Unpacking ${ARCHIVE}..."
-tar xf "${ARCHIVE}"
+tar -xjf "${ARCHIVE}"
 rm -f "${ARCHIVE}"
 
 # configure
 echo "\n### Configuring ${PROGRAM_VERSION} ..."
 cd ${PROGRAM_VERSION}
 C_FOR_BUILD=/usr/bin/gcc ABI=standard emconfigure ./configure \
-  --build i686-pc-linux-gnu --host none --disable-assembly --enable-cxx \
-  --prefix=${ROOT_DIR}
+    --build i686-pc-linux-gnu --host none --disable-assembly --enable-cxx \
+    --prefix=${ROOT_DIR}
 
 # build
 echo "\n### Building ${PROGRAM_VERSION}..."

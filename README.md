@@ -9,9 +9,6 @@ Tested on Ubuntu 16.04 LTS.
 ### emscripten
 Follow the instructions on https://kripken.github.io/emscripten-site/docs/getting_started/downloads.html in order to install emscripten and all of its dependencies.
 
-### GMP
-* xz-utils (to unpack GMP sources)
-
 ### For Demo Web App
 * [browserify](https://www.npmjs.com/package/browserify)
 * [http-server](https://www.npmjs.com/package/http-server)
