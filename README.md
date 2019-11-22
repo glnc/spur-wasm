@@ -1,7 +1,7 @@
 # spur-wasm
 Compile SPUR to WebAssembly using emscripten.
 
-This is a fork of [SPUR](https://github.com/ZaydH/spur) by Zayd Hammoudeh.
+This is a fork of [SPUR](https://github.com/ZaydH/spur) by Zayd Hammoudeh and Dimitris Achlioptas.
 
 Tested on Ubuntu 16.04 LTS.
 
