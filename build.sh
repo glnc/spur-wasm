@@ -42,7 +42,7 @@ emcc -o release/$PROGRAM.js \
     -I include/ -L lib/ -lgmpxx -lgmp \
     -std=c++11 \
     -O3 \
-    -s ALLOW_MEMORY_GROWTH=1 -s INVOKE_RUN=0 -s FORCE_FILESYSTEM=1 -s EXIT_RUNTIME=1 -s MODULARIZE=1 -s 'EXPORT_NAME="$PROGRAM"' \
+    -s ALLOW_MEMORY_GROWTH=1 -s INVOKE_RUN=0 -s FORCE_FILESYSTEM=1 -s EXIT_RUNTIME=1 -s MODULARIZE=1 -s 'EXPORT_NAME="'${PROGRAM}'"' \
     --pre-js src_js/prerun.js
 
 cp ./src_js/Wrapper.js ./release/Wrapper.js
