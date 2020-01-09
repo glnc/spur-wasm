@@ -69,7 +69,6 @@ function addRun () {
 		for (let i = 0; i < args.length; i++) {
 			localArgs[i] = args[i];
 		}
-		localArgs.push("-cnf");
 		localArgs.push("/input");
 		callMain(localArgs);
 
