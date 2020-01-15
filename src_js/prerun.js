@@ -66,7 +66,6 @@ function addRun () {
 		FS.writeFile("input", input);
 
 		let callArgs = Array.from(args);
-		callArgs.push("-cnf");
 		callArgs.push("/input");
 
 		callMain(callArgs);
