@@ -65,16 +65,17 @@ function addRun() {
 
 		FS.writeFile("input", input);
 
-		let localArgs = [];
+		let callArgs = [];
 		for (let i = 0; i < args.length; i++) {
 			if (args[i] !== "-cnf") {
-				localArgs.push(args[i]);
+				callArgs.push(args[i]);
 			}
 
 		}
-		localArgs.push("-cnf");
-		localArgs.push("/input");
-		callMain(localArgs);
+		callArgs.push("-cnf");
+		callArgs.push("/input");
+
+		callMain(callArgs);
 
 		Module.MyStdout.flush();
 
