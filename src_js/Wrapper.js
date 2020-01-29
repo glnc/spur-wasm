@@ -134,9 +134,6 @@ Wrapper.run = function (input, args) {
 				"asm.js": false,
 				"wasmMemory": Wrapper._memory
 			}).then(instance => {
-				if(args[args.length - 1] != "-cnf"){
-					args.push("-cnf");
-				}
 				let result = instance.run(input, args);
 				// reset the memory for the next run.
 				new Uint32Array(Wrapper._memory.buffer).fill(0);

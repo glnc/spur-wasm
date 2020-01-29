@@ -12,7 +12,7 @@ Module.preRun.push(addRun);
  * Add the MyStdout object to the module.
  * MyStdout is used to buffer the standard output of the web assembly.
  */
-function addMyStdOut () {
+function addMyStdOut() {
 	let MyStdout = {};
 
 	MyStdout._buffer = "";
@@ -54,7 +54,7 @@ function addMyStdOut () {
 /**
  * Add a function that wraps the main call.
  */
-function addRun () {
+function addRun() {
 	/**
 	 * Call main.
 	 * input is the content of the input file.
@@ -64,11 +64,15 @@ function addRun () {
 		Module.MyStdout.clear();
 
 		FS.writeFile("input", input);
-		
+
 		let localArgs = [];
 		for (let i = 0; i < args.length; i++) {
-			localArgs[i] = args[i];
+			if (args[i] !== "-cnf") {
+				localArgs.push(args[i]);
+			}
+
 		}
+		localArgs.push("-cnf");
 		localArgs.push("/input");
 		callMain(localArgs);
 
