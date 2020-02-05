@@ -66,11 +66,10 @@ function addRun() {
 		FS.writeFile("input", input);
 
 		let callArgs = [];
-		for (let i = 0; i < args.length; i++) {
+		for (let i = 0, n = args.length; i < n; i++) {
 			if (args[i] !== "-cnf") {
 				callArgs.push(args[i]);
 			}
-
 		}
 		callArgs.push("-cnf");
 		callArgs.push("/input");
